@@ -4,7 +4,7 @@ Start-SimplePomodoro is a function, add your variables and the run syntax in the
 
 ## Script Result
 
-![Start-SimplePomodoro](https://github.com/StaleHansen/Public/blob/master/Start-SimplePomodoro/Start-SimplePomodoro.PNG)
+![Start-SimplePomodoro](https://github.com/StaleHansen/Public/blob/master/Start-SimplePomodoro/Start-SimplePomodoro.png)
 
 ## SYNOPSIS
       Start-SimplePomodoro is a function command to start a new Pomodoro session with additional actions. This is a simplified version of the Start-Pomodoro 
