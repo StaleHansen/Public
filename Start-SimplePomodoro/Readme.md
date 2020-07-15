@@ -32,4 +32,6 @@ Read the latest updates about this script: https://msunified.net/?s=pomodoro
       Start-SimplePomodoro -Minutes 0.1 -SpotifyPlayList spotify:playlist:XXXXXXXXXXXXXXXXXX -IFTTMuteTrigger pomodoro_start -IFTTUnMuteTrigger pomodoro_stop -IFTTWebhookKey XXXXXXXXX
       .EXAMPLE
       Start-SimplePomodoro -Teamsmode Stop
+      .EXAMPLE
+      Start-SimplePomodoro -Secret YourFlowSecret -AutomateURI YourAutomateURI
 
