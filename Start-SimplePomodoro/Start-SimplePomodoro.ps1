@@ -43,7 +43,7 @@
     Param (
         
         [int]$Minutes = 25, #Duration of your Pomodoro Session, default is 25 minutes
-        [string]$Secret = "Pomodoro", #Secret for the flow trigger
+        [string]$Secret = "MySecret", #Secret for the flow trigger
         [string]$AutomateURI, #The URI used in the webrequest to your flow
         [switch]$StartMusic,
         [string]$SpotifyPlayList, #uri of your favourite spotify playlist
