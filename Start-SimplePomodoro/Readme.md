@@ -7,7 +7,8 @@ Start-SimplePomodoro is a function, add your variables and the run syntax in the
 ![Start-SimplePomodoro](https://github.com/StaleHansen/Public/blob/master/Start-SimplePomodoro/Start-SimplePomodoro.png)
 
 ## SYNOPSIS
-      Start-SimplePomodoro is a function command to start a new Pomodoro session with additional actions. This is a simplified version of the Start-Pomodoro 
+      Start-SimplePomodoro is a function command to start a new Pomodoro session with additional actions. This is a simplified version of the Start-Pomodoro
+      Read the latest updates about this script: https://msunified.net/?s=pomodoro
 ## DESCRIPTION
         By MVP Ståle Hansen (http://msunified.net) with modifications by Jan Egil Ring (https://github.com/janegilring)
         Pomodoro function by Nathan.Run() http://nathanhoneycutt.net/blog/a-pomodoro-timer-in-powershell/
