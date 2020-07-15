@@ -1,13 +1,14 @@
 # Start-SimplePomodoro
 
 Start-SimplePomodoro is a function, add your variables and the run syntax in the ps1 file for easy reusability
+Read the latest updates about this script: https://msunified.net/?s=pomodoro
 
 ## Script Result
 
-![Start-SimplePomodoro](https://github.com/StaleHansen/Public/blob/master/Start-SimplePomodoro/Start-SimplePomodoro.PNG)
+![Start-SimplePomodoro](https://github.com/StaleHansen/Public/blob/master/Start-SimplePomodoro/Start-SimplePomodoro.png)
 
 ## SYNOPSIS
-      Start-SimplePomodoro is a function command to start a new Pomodoro session with additional actions. This is a simplified version of the Start-Pomodoro 
+      Start-SimplePomodoro is a function command to start a new Pomodoro session with additional actions. This is a simplified version of the Start-Pomodoro
 ## DESCRIPTION
         By MVP Ståle Hansen (http://msunified.net) with modifications by Jan Egil Ring (https://github.com/janegilring)
         Pomodoro function by Nathan.Run() http://nathanhoneycutt.net/blog/a-pomodoro-timer-in-powershell/
@@ -31,4 +32,6 @@ Start-SimplePomodoro is a function, add your variables and the run syntax in the
       Start-SimplePomodoro -Minutes 0.1 -SpotifyPlayList spotify:playlist:XXXXXXXXXXXXXXXXXX -IFTTMuteTrigger pomodoro_start -IFTTUnMuteTrigger pomodoro_stop -IFTTWebhookKey XXXXXXXXX
       .EXAMPLE
       Start-SimplePomodoro -Teamsmode Stop
+      .EXAMPLE
+      Start-SimplePomodoro -Secret YourFlowSecret -AutomateURI YourAutomateURI
 
