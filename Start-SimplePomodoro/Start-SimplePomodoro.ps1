@@ -199,15 +199,14 @@
 
 $Input = "y"
 $Count = 1
-while ($Input -eq "y"){
 
-#Uncomment the one of the below lines and fill in your playlist and IFTTT to have it run as part of the shortcut
-#Start-SimplePomodoro -SpotifyPlayList spotify:playlist:XXXXXXXXXXXXXXXXXX -IFTTTMuteTrigger pomodoro_start -IFTTTUnMuteTrigger pomodoro_stop -IFTTTWebhookKey XXXXXXXXX -Secret YourFlowSecret -AutomateURI YourAutomateURI
+do {
+    #Uncomment the one of the below lines and fill in your playlist and IFTTT to have it run as part of the shortcut
+    #Start-SimplePomodoro -SpotifyPlayList spotify:playlist:XXXXXXXXXXXXXXXXXX -IFTTTMuteTrigger pomodoro_start -IFTTTUnMuteTrigger pomodoro_stop -IFTTTWebhookKey XXXXXXXXX -Secret YourFlowSecret -AutomateURI YourAutomateURI
 
-#reset
-#Start-SimplePomodoro -Minutes 0.1 -SpotifyPlayList spotify:playlist:XXXXXXXXXXXXXXXXXX -IFTTTMuteTrigger pomodoro_start -IFTTTUnMuteTrigger pomodoro_stop -IFTTTWebhookKey XXXXXXXXX -Secret YourFlowSecret -AutomateURI YourAutomateURI
+    #reset
+    #Start-SimplePomodoro -Minutes 0.1 -SpotifyPlayList spotify:playlist:XXXXXXXXXXXXXXXXXX -IFTTTMuteTrigger pomodoro_start -IFTTTUnMuteTrigger pomodoro_stop -IFTTTWebhookKey XXXXXXXXX -Secret YourFlowSecret -AutomateURI YourAutomateURI
 
-$Input = Read-Host -Prompt 'Start a new Pomodoro deep work session? (y/n)'
-$Count++
-
-}
+    $Input = Read-Host -Prompt 'Start a new Pomodoro deep work session? (y/n)'
+    $Count++
+}while ($Input -eq "y")
