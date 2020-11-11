@@ -20,7 +20,7 @@ Start-Process "https://msunified.net/2019/07/11/my-post-migration-from-skype-to-
 
 
 
-$UserName = "gash@cloudway.no"
+$UserName = "<YourTeamsServiceAdmin>"
 
 
 Import-Module MicrosoftTeams
@@ -55,7 +55,7 @@ C:\Temp\.\Enable-CsOnlineSessionForReconnection.ps1
 
 
 #individualcheck
-$user="stale.hansen@cloudway.no"
+$user="<TeamsUser>"
 Get-CsOnlineUser $User | Format-List UserPrincipalName, DisplayName, SipAddress, Enabled, TeamsUpgradeEffectiveMode, `
 EnterpriseVoiceEnabled, HostedVoiceMail, City, UsageLocation, DialPlan, TenantDialPlan, OnlineVoiceRoutingPolicy, `
 LineURI, OnPremLineURI, OnlineDialinConferencingPolicy, TeamsVideoInteropServicePolicy, TeamsCallingPolicy, HostingProvider, `
@@ -207,7 +207,7 @@ $NOADUsers | Out-File -file "C:\Temp\NOADTeamsFest.csv"
 
 #validate Calling and location
 Get-CsOnlineUser $User | Format-List UserPrincipalName, City, UsageLocation, DialPlan, TenantDialPlan, OnlineVoiceRoutingPolicy,LineURI, OnPremLineURI, TeamsCallingPolicy, VoicePolicy,CountryOrRegionDisplayName,Country
-Get-CsOnlineUser "marten.hellebro@cloudway.no"| Format-List UserPrincipalName, City, UsageLocation, DialPlan, TenantDialPlan, OnlineVoiceRoutingPolicy,LineURI, OnPremLineURI, TeamsCallingPolicy, VoicePolicy,CountryOrRegionDisplayName,Country
+Get-CsOnlineUser "<AnotherTeamsUser>"| Format-List UserPrincipalName, City, UsageLocation, DialPlan, TenantDialPlan, OnlineVoiceRoutingPolicy,LineURI, OnPremLineURI, TeamsCallingPolicy, VoicePolicy,CountryOrRegionDisplayName,Country
 
 
 
