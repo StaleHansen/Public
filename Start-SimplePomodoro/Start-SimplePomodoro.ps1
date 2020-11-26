@@ -45,6 +45,7 @@
         [int]$Minutes = 25, #Duration of your Pomodoro Session, default is 25 minutes
         [string]$Secret = "MySecret", #Secret for the flow trigger
         [string]$AutomateURI, #The URI used in the webrequest to your flow
+        [string]$ToDoURL, #uri of your favourite spotify playlist
         [switch]$StartMusic,
         [string]$SpotifyPlayList, #uri of your favourite spotify playlist
         [string]$IFTTTMuteTrigger, #your_IFTTT_maker_mute_trigger
@@ -55,6 +56,7 @@
         [string]$Path = $env:LOCALAPPDATA+"\Microsoft\Teams\Update.exe",
         [string]$Arguments = '--processStart "Teams.exe"',
         [string]$Teamsmode = "HideBadge" #default is hide badge, set this variable to "stop" to just stop the teams client
+
     )
 
     #Clearing some space to make room for the counter
@@ -62,6 +64,10 @@
     Write-output ""
     Write-output ""
     Write-output "" 
+    
+    #get lenght of Pomodoro
+    $minutes = Read-Host "How long is your Pomodoro?"
+    Set-Clipboard -Value $minutes
     
 
     #Setting computer to presentation mode, will suppress most types of popups
@@ -103,7 +109,8 @@
             }   
         
         }
-    #Invoking PowerAutomate to change set current time on your Focus time calendar event, default length is 25 minutes
+    #Invoking PowerAutomate to change set current time on your Focus time calendar event, either through https trigger og manually via todo
+    if ($AutomateURI -ne ''){
         $body = @()
         $body = @"
             { 
@@ -111,8 +118,14 @@
                "Secret":"$Secret"
             }
 "@
-    Write-Host "Processing Focus time in your calendar and setting Teams to Focusing status, expect 1-3 minutes delay" -ForegroundColor Green
-    Invoke-RestMethod -Method Post -Body $Body -Uri $AutomateURI -ContentType "application/json"
+        Write-Host "Processing Focus time in your calendar and setting Teams to Focusing status" -ForegroundColor Green
+        Invoke-RestMethod -Method Post -Body $Body -Uri $AutomateURI -ContentType "application/json"
+    }
+   elseif ($ToDoURL -ne ''){Write-Host "Opening your ToDo Pomodoro list in web, may take up to three minutes before calendar focus time update" -ForegroundColor Green; Start-Process -FilePath $ToDoURL}
+   else{Write-Host "No calendar focus time specified" -ForegroundColor Green}
+
+
+
 
     #Go for deep work
 
@@ -180,7 +193,7 @@
             }   
         }
 
-    Write-Host "Teams presence will reset in about 1-3 minutes" -ForegroundColor Green
+    Write-Host "Teams presence is resetting" -ForegroundColor Green
    
     #playing end notification sound
     if (Test-Path -Path $EndNotificationSound) {
@@ -204,8 +217,7 @@ while ($Input -eq "y"){
 #Uncomment the one of the below lines and fill in your playlist and IFTTT to have it run as part of the shortcut
 #Start-SimplePomodoro -SpotifyPlayList spotify:playlist:XXXXXXXXXXXXXXXXXX -IFTTTMuteTrigger pomodoro_start -IFTTTUnMuteTrigger pomodoro_stop -IFTTTWebhookKey XXXXXXXXX -Secret YourFlowSecret -AutomateURI YourAutomateURI
 
-#reset
-#Start-SimplePomodoro -Minutes 0.1 -SpotifyPlayList spotify:playlist:XXXXXXXXXXXXXXXXXX -IFTTTMuteTrigger pomodoro_start -IFTTTUnMuteTrigger pomodoro_stop -IFTTTWebhookKey XXXXXXXXX -Secret YourFlowSecret -AutomateURI YourAutomateURI
+Start-SimplePomodoro 
 
 $Input = Read-Host -Prompt 'Start a new Pomodoro deep work session? (y/n)'
 $Count++
