@@ -1,5 +1,3 @@
-As shown at Microsoft Ignite 2015 here is the script demoed called Get-SfBNumbers.net. At this time the tool is in beta since it has only been tested in a handfull of deployments. More examples and discussion can be found at http://SfBNumbers.net
-
 The script support Lync Server 2010, Lync Server 2013 and Skype for Business Server 2015
 
 Description
