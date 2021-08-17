@@ -1,6 +1,6 @@
 # Find available phone numbers with Get-TeamsNumbers.ps1
 
-ou do it. I believe it can waste hours for an organization figuring out phone numbers. What if you could run a PowerShell routine to find the next available numbers in a number range and at the same time know how many numbers you have left?😱 Now you can, with Get-TeamsNumbers.ps1.
+I believe assigning phone numbers can waste hours for an organization with multiple ranges and locations. What if you could run a PowerShell routine to find the next available numbers in a number range and at the same time know how many numbers you have left?😱 Now you can, with Get-TeamsNumbers.ps1.
 
 Fun fact: this script is based on my very popular phone number management routine I crated for Skype for Business Server 2015 called Get-SfBNumbers.ps1.
 
