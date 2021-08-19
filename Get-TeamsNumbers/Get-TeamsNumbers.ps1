@@ -1,4 +1,5 @@
-﻿<#
+﻿#This script is authored by MVP Ståle Hansen, @StaleHansen on Twitter, feedback can be provided here with more info available: https://msunified.net/2021/08/18/find-available-phone-numbers-with-get-teamsnumbers-ps1/
+<#
 .SYNOPSIS
 This script will get the next available number of any provided number range from Unassigned Numbers, Array or input to the script and will generate a full report and a summary per range
 
