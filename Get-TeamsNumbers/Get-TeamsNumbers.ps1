@@ -200,7 +200,7 @@ function NewLyncNumberFromAdContact {
 
 Function Get-AllnumbersInDeployment{
     # Microsoft.Rtc.Management.ADConnect.Schema.ADUser
-    $userUris = Get-CsOnlineUser -Filter {OnPremLineURI -ne $Null} -WarningAction SilentlyContinue | % { NewLyncNumberFromAdContact "User" $_ }
+    $userUris = Get-CsOnlineUser -Filter {LineURI -ne $Null} -WarningAction SilentlyContinue | % { NewLyncNumberFromAdContact "User" $_ }
     #$userUris.count
 
     # combine all results together
