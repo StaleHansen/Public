@@ -199,16 +199,10 @@ function NewLyncNumberFromAdContact {
 }
 
 Function Get-AllnumbersInDeployment{
-    # Microsoft.Rtc.Management.ADConnect.Schema.ADUser
     $userUris = Get-CsOnlineUser -Filter {LineURI -ne $Null} -WarningAction SilentlyContinue | % { NewLyncNumberFromAdContact "User" $_ }
-    #$userUris.count
-
-    # combine all results together
     $allUsedNumbers = New-Object System.Collections.ArrayList 
-    foreach($list in @($userUris,$plUris,$analogUris,$caUris,$rgsUris,$dialinUris,$exumUris,$tepUris,$MTRUris)) {
-	    if($list -and $list.Length -gt 0) {
-		    $allUsedNumbers.AddRange($list)
-	    }
+    foreach($list in @($userUris)) {
+		    $allUsedNumbers.Add($list)
     }
 
     Return $allUsedNumbers
